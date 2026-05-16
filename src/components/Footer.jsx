@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="footer footer-horizontal footer-center text-base-content p-10 bg-green-900 -space-y-2">
-        <h2 className="text-[clamp(2rem,3vw,4rem)] text-white font-extrabold geist pt-10">
+        <h2 className="text-[clamp(1rem,3vw,2.5rem)] text-white font-extrabold geist pt-10">
           KeenKeeper
         </h2>
         <p className="text-base text-white geist">
