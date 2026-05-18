@@ -3,11 +3,11 @@ import React from 'react';
 const Banner = () => {
   const summery = [
     {
-      num: 10,
+      num: 12,
       status: "Total Friends",
     },
     {
-      num: 3,
+      num: 4,
       status: "On Track",
     },
     {
