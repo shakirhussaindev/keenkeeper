@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FriendsCard = ({friend}) => {
 
-  const { name, picture, days_since_contact, status, tags } = friend
+  const {id, name, picture, days_since_contact, status, tags } = friend
 
   return (
-    <div className="p-6 bg-white rounded-md shadow-md flex flex-col justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
+    <Link
+      to={`/friend/${id}`}
+      className="p-6 bg-white rounded-md shadow-md flex flex-col justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
+    >
       <div className="pb-3">
         <img src={picture} alt="" className="rounded-full w-20" />
       </div>
@@ -30,7 +34,7 @@ const FriendsCard = ({friend}) => {
       >
         {status}
       </p>
-    </div>
+    </Link>
   );
 };
 
