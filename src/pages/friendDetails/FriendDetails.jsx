@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFriend from "../../hooks/useFriend";
 import { GoMail } from "react-icons/go";
@@ -8,18 +8,33 @@ import Calling from "../../assets/calling.png";
 import Chat from "../../assets/chat.png";
 import Camera from "../../assets/camera.png";
 import { ClimbingBoxLoader } from "react-spinners";
+import { FriendsContext } from "../../context/FriendsContext";
 
 
 const FriendDetails = () => {
   const { id } = useParams();
   // console.log(id,'id')
 
+  
+  const { timeline, setTimeline } = useContext(FriendsContext);
+
+  const handleTimelineData = (type,userDetails)=>{
+    const frndHistory = {
+      ...userDetails,
+      type,
+      time: new Date().toDateString()
+    }
+    setTimeline([...timeline,frndHistory])
+  } 
+  console.log(timeline)
+
+
   const { friends, loader } = useFriend();
 
   // console.log(friends)
 
   const expectedFrnd = friends?.find((fr) => fr.id === Number(id));
-  console.log(expectedFrnd);
+  // console.log(expectedFrnd);
 
   return (
     <div className="bg-[#F8FAFC] geist">
@@ -128,16 +143,25 @@ const FriendDetails = () => {
                 <h4 className="text-xl font-medium color2 pb-4">
                   Quick Check-In
                 </h4>
-                <div className="grid grid-cols-3 gap-4">
-                  <button className="btn flex flex-col h-auto p-4">
+                <div className="grid lg:grid-cols-3 gap-4">
+                  <button
+                    onClick={() => handleTimelineData("call", expectedFrnd)}
+                    className="btn flex flex-col h-auto p-4"
+                  >
                     <img src={Calling} alt="" />
                     <p className="text-lg color1 pt-2">Call</p>
                   </button>
-                  <button className="btn flex flex-col h-auto p-4">
+                  <button
+                    onClick={() => handleTimelineData("text", expectedFrnd)}
+                    className="btn flex flex-col h-auto p-4"
+                  >
                     <img src={Chat} alt="" />
                     <p className="text-lg color1 pt-2">Text</p>
                   </button>
-                  <button className="btn flex flex-col h-auto p-4">
+                  <button
+                    onClick={() => handleTimelineData("video", expectedFrnd)}
+                    className="btn flex flex-col h-auto p-4"
+                  >
                     <img src={Camera} alt="" />
                     <p className="text-lg color1 pt-2">Video</p>
                   </button>
