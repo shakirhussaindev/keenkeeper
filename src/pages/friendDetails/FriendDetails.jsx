@@ -9,6 +9,7 @@ import Chat from "../../assets/chat.png";
 import Camera from "../../assets/camera.png";
 import { ClimbingBoxLoader } from "react-spinners";
 import { FriendsContext } from "../../context/FriendsContext";
+import { toast } from "react-toastify";
 
 
 const FriendDetails = () => {
@@ -22,9 +23,19 @@ const FriendDetails = () => {
     const frndHistory = {
       ...userDetails,
       type,
-      time: new Date().toDateString()
+      time: new Date().toLocaleString()
     }
     setTimeline([...timeline,frndHistory])
+    
+    if(frndHistory.type === 'call'){
+      toast.success(`Call with ${expectedFrnd.name}`)
+    }
+    if(frndHistory.type === 'text'){
+      toast.success(`Text with ${expectedFrnd.name}`)
+    }
+    if(frndHistory.type === 'video'){
+      toast.success(`Video with ${expectedFrnd.name}`)
+    }
   } 
   console.log(timeline)
 
