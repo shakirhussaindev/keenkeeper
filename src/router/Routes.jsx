@@ -3,7 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/homePage/Home";
 import TimeLine from "../pages/timeLine/TimeLine";
 import Stats from "../pages/stats/Stats";
-
+import ErrorPage from "../pages/error/ErrorPage";
 import FriendDetails from "../pages/friendDetails/FriendDetails";
 
 export const router = createBrowserRouter([
@@ -28,6 +28,6 @@ export const router = createBrowserRouter([
         element: <FriendDetails/>
       }
     ],
-    
+    errorElement: <ErrorPage/>,
   },
 ]);
