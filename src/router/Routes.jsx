@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/homePage/Home";
 import TimeLine from "../pages/timeLine/TimeLine";
 import Stats from "../pages/stats/Stats";
+
 import FriendDetails from "../pages/friendDetails/FriendDetails";
 
 export const router = createBrowserRouter([
@@ -27,6 +28,6 @@ export const router = createBrowserRouter([
         element: <FriendDetails/>
       }
     ],
-    errorElement: <h2>404 Not Found</h2>,
+    
   },
 ]);
