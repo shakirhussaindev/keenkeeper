@@ -71,8 +71,8 @@ const Stats = () => {
 
           {timeline.length === 0 ? (
             <div>
-              <h4 className="text-center text-2xl font-medium">
-                No interaction with your friend <br /> at this moment
+              <h4 className="text-center text-xl font-medium text-gray-500">
+                No interaction with your friend at this moment.
               </h4>
               
             </div>
