@@ -41,28 +41,6 @@ The application is fully responsive and optimized for desktop, tablet, and mobil
 
 ---
 
-## ⚙️ Installation
-
-Clone the repository:
-
-```bash
-git clone <your-repository-link>
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the project:
-
-```bash
-npm run dev
-```
-
----
-
 ## 🌐 Live Demo
 
 https://keenkeeper-lake.vercel.app/
